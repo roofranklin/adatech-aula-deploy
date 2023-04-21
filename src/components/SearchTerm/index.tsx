@@ -1,4 +1,4 @@
-import { useTask } from "../../context/task.contex";
+import { useTask } from "../../context/task.context";
 import { StyledInput } from "../../screens/Listview/Listview.styles";
 
 const SearchTerm = () => {

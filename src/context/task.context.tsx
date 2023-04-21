@@ -71,7 +71,7 @@ const TaskProvider = ({ children }: IProps) => {
   };
 
   const Status = useMemo(() => {
-    console.log("🚀 ~ file: task.contex.tsx:98 ~ Status ~ useMemo");
+    console.log("🚀 ~ file: task.context.tsx:98 ~ Status ~ useMemo");
 
     const data = tasks.reduce(
       (previous, item) => {
@@ -100,7 +100,7 @@ const TaskProvider = ({ children }: IProps) => {
   }, [tasks.length]);
 
   useEffect(() => {
-    console.log("🚀 ~ file: task.context ~ 100");
+    console.log("🚀 ~ file: task.contextt ~ 100");
   }, []);
 
   return (

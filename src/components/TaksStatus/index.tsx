@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from "react";
-import { useTask } from "../../context/task.contex";
+import { useTask } from "../../context/task.context";
 
 
 const TaskStatus = () => {

@@ -8,7 +8,7 @@ import {
 import Spacer from "../../components/Spacer";
 import { ListContainer, TodoListContainer } from "./Listview.styles";
 import { ITask } from "./Listview.types";
-import { useTask } from "../../context/task.contex";
+import { useTask } from "../../context/task.context";
 import { SearchTerm } from "../../components/SearchTerm";
 import TodoListItem from "../../components/TodoListItem";
 import AddTaskInput from "../../components/Input";
