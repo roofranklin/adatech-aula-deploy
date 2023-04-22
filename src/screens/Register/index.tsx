@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import { IRegisterProps, IRegisterData} from './Register.types'
 import { RegisterForm, 
@@ -33,7 +35,7 @@ const Register: React.FC<IRegisterProps> = ({ onSubmit }) => {
     const validateAge = (age: string): number | string | undefined => {
         const ageNumber = Number(age);
         if (isNaN(ageNumber) || ageNumber < 18) {
-          return 'A idade deve ser um número maior que 17';
+          return 'Você precisa ter 18 anos ou mais para entrar';
         }
     };
 
@@ -48,15 +50,28 @@ const Register: React.FC<IRegisterProps> = ({ onSubmit }) => {
         const nameError = validateName(formData.name);
         const emailError = validateEmail(formData.email);
         const ageError = validateAge(formData.age);
-      
-        if (nameError || emailError || ageError) {
-          alert(`${nameError || ''} ${emailError || ''} ${ageError || ''}`);
-          return;
+
+        const toastPosition = toast.POSITION.TOP_RIGHT
+
+        if (nameError) {
+            toast.error(nameError, {position: toastPosition});
+            return;
         }
-      
+        
+        if (emailError) {
+            toast.error(emailError, {position: toastPosition});
+            return;
+        }
+
+        if (ageError) {
+            toast.error(emailError, {position: toastPosition});
+            return;
+        } 
+
         console.log(formData);
         onSubmit(formData);
         navigate('/listview');
+
       };
 
   return (
@@ -73,6 +88,7 @@ const Register: React.FC<IRegisterProps> = ({ onSubmit }) => {
             <InputRegister type="tel" name="age" value={formData.age} onChange={handleChange} />
             
             <ButtonRegister type="submit">Enviar</ButtonRegister>
+            <ToastContainer />
         </RegisterForm>
     </>
   );
