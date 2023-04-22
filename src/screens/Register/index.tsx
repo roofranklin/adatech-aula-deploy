@@ -64,7 +64,7 @@ const Register: React.FC<IRegisterProps> = ({ onSubmit }) => {
         }
 
         if (ageError) {
-            toast.error(emailError, {position: toastPosition});
+            toast.error(ageError, {position: toastPosition});
             return;
         } 
 
