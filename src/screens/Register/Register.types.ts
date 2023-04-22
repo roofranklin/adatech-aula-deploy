@@ -5,5 +5,5 @@ export interface IRegisterProps {
  export interface IRegisterData {
     name: string;
     email: string;
-    message: string;
+    age: string;
 }
