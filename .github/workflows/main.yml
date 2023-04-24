@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: ✅ Checkout
       uses: actions/checkout@v1
+      with:
+          path: build
 
     - name: ⚙️ Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -21,5 +23,3 @@ jobs:
 
     - name: 🤞 Deploy static site to S3 bucket
       run: aws s3 sync ./public/ s3://adatech-react2 --delete
-      with:
-          path: build
