@@ -25,7 +25,7 @@ const Register: React.FC<IRegisterProps> = ({ onSubmit }) => {
         }
     };
       
-      const validateEmail = (email: string): string | undefined => {
+    const validateEmail = (email: string): string | undefined => {
         const emailRegex = /\S+@\S+\.\S+/;
         if (!emailRegex.test(email)) {
           return 'O email deve ser válido';
@@ -87,7 +87,7 @@ const Register: React.FC<IRegisterProps> = ({ onSubmit }) => {
             <LabelRegister>Idade:</LabelRegister>
             <InputRegister type="tel" name="age" value={formData.age} onChange={handleChange} />
             
-            <ButtonRegister type="submit">Enviar</ButtonRegister>
+            <ButtonRegister type="submit">Entrar</ButtonRegister>
             <ToastContainer />
         </RegisterForm>
     </>
