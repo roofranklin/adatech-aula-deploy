@@ -16,8 +16,8 @@ const App = () => {
         <Suspense fallback={<div>Carregando...</div>}>
           <Router>
             <Routes>
-                <Route path="/" element={<LazyRegister onSubmit={function handleSubmit(data: IRegisterData): void {} } />} />
-                <Route path="/listview" element={<LazyListview />} />
+                <Route path="/adatech-aula-deploy/build/" element={<LazyRegister onSubmit={function handleSubmit(data: IRegisterData): void {} } />} />
+                <Route path="/adatech-aula-deploy/build/listview" element={<LazyListview />} />
             </Routes>
           </Router>
         </Suspense>
