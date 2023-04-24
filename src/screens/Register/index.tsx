@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { useState } from 'react';
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { IRegisterProps, IRegisterData} from './Register.types'
 import { RegisterForm, 
@@ -51,22 +52,37 @@ const Register: React.FC<IRegisterProps> = ({ onSubmit }) => {
         const emailError = validateEmail(formData.email);
         const ageError = validateAge(formData.age);
 
-        const toastPosition = toast.POSITION.TOP_RIGHT
-
         if (nameError) {
-            toast.error(nameError, {position: toastPosition});
+            console.log(nameError);
             return;
         }
         
         if (emailError) {
-            toast.error(emailError, {position: toastPosition});
+            console.log(emailError);
             return;
         }
 
         if (ageError) {
-            toast.error(ageError, {position: toastPosition});
+            console.log(ageError);
             return;
         } 
+
+        // const toastPosition = toast.POSITION.TOP_RIGHT
+
+        // if (nameError) {
+        //     toast.error(nameError, {position: toastPosition});
+        //     return;
+        // }
+        
+        // if (emailError) {
+        //     toast.error(emailError, {position: toastPosition});
+        //     return;
+        // }
+
+        // if (ageError) {
+        //     toast.error(ageError, {position: toastPosition});
+        //     return;
+        // } 
 
         console.log(formData);
         onSubmit(formData);
@@ -88,7 +104,8 @@ const Register: React.FC<IRegisterProps> = ({ onSubmit }) => {
             <InputRegister type="tel" name="age" value={formData.age} onChange={handleChange} />
             
             <ButtonRegister type="submit">Entrar</ButtonRegister>
-            <ToastContainer />
+            {/* <Link to="/listview">Vai pra lista</Link> */}
+            {/* <ToastContainer /> */}
         </RegisterForm>
     </>
   );
